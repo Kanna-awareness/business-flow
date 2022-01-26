@@ -1,25 +1,28 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Sidebar from './utils/bootstrap/Sidebar';
+import Topbar from './utils/bootstrap/Topbar';
+import ScrollTop from './utils/bootstrap/ScrollTop';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <React.Fragment>
+        <div id="wrapper">
+            {/* <Sidebar/> */}
+            <div id="content-wrapper" className="d-flex flex-column">
+                <Topbar/>
+                <div id="content">
+                    <div className="container-fluid">
+                      process map
+                       {/* <ProcessMap/> */}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ScrollTop/>
+    </React.Fragment>
+)
+
 }
 
 export default App;
