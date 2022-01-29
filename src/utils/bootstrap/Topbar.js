@@ -4,7 +4,7 @@ import userLogo from '../../images/logo192.png';
 class Topbar extends React.Component {
   render() {
       return (
-        <nav className="navbar navbar-expand navbar-light bg-special-green topbar mb-2 static-top shadow">
+        <nav className="navbar navbar-expand navbar-light bg-warning topbar mb-2 static-top shadow">
 
           <button id="sidebarToggleTop" className="btn btn-link d-md-none rounded-circle mr-3">
             <i className="fa fa-bars"></i>

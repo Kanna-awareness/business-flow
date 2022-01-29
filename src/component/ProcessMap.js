@@ -4,6 +4,7 @@ import "bpmn-js/dist/assets/diagram-js.css";
 import "bpmn-js/dist/assets/bpmn-font/css/bpmn-embedded.css";
 import '../css/bpmn.css';
 import axios from "axios";
+import defaultXML from '../utils/bpmnXML/diagram.bpmn';
 
 function ProcessMap() {
   const [diagram, diagramSet] = useState("");
@@ -12,7 +13,7 @@ function ProcessMap() {
     if (diagram.length === 0) {
       axios
         .get(
-          "https://cdn.staticaly.com/gh/bpmn-io/bpmn-js-examples/master/colors/resources/pizza-collaboration.bpmn"
+          defaultXML
         )
         .then((r) => {
           diagramSet(r.data);
