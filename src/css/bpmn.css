@@ -4,8 +4,9 @@
 }
 
 .djs-popup, .djs-palette {
-    background: #f8f9fc;
-    border: solid 1px #e3e6f0;
+    background: #e3e6f0;
+    border-right: solid 1px #000;
+    height: 100%;
 }
 
 .djs-context-pad {

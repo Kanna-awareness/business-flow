@@ -6498,6 +6498,14 @@ button.bg-dark:focus {
   background-color: #1fb5ad !important;
 }
 
+.bg-light-black {
+  background-color: #000000ad !important;
+}
+
+.text-white {
+  color: #fff !important;
+}
+
 .bg-transparent {
   background-color: transparent !important;
 }
@@ -10199,7 +10207,7 @@ a:focus {
 
 .topbar .topbar-divider {
   width: 0;
-  border-right: 1px solid #000;
+  border-right: 1px solid #fff;
   height: calc(4.375rem - 2rem);
   margin: auto 1rem;
 }

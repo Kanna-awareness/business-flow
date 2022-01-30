@@ -1,0 +1,42 @@
+.bpmnMenu {
+    width: 100%;
+    background-color: #e3e6f0;
+    border-left: solid 1px #000;
+    border-right: solid 1px #000;
+    border-top: solid 1px #000;
+    height: 50px;
+    padding-top: 7px;
+    padding-left: 3px;
+    padding-right: 15px;
+}
+
+.leftMenu, .rightMenu {
+    display: inline-block;
+}
+
+.rightMenu {
+    float: right;
+}
+
+.rightMenu button {
+    margin-left: 5px;
+}
+
+.processName {
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #e3e6f0;
+    border: none;
+    cursor: pointer;
+    width: 300px;
+}
+
+.processName:focus {
+    outline: 1px solid black;
+    background-color: white;
+}
+
+.nonEdit {
+    padding-left: 2px;
+    
+}

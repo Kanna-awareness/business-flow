@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
-import Modeler from "bpmn-js/lib/Modeler";
+import Modeler from "bpmn-js/lib/NavigatedViewer";
 import "bpmn-js/dist/assets/diagram-js.css";
 import "bpmn-js/dist/assets/bpmn-font/css/bpmn-embedded.css";
 import '../css/bpmn.css';
 import axios from "axios";
 import defaultXML from '../utils/bpmnXML/diagram.bpmn';
+import BpmnMenu from '../utils/BpmnMenu';
 
-function ProcessMap() {
+function ProcessMapView() {
   const [diagram, diagramSet] = useState("");
-  const container = document.getElementById("container");
+  const container = document.getElementById("container-view");
   useEffect(() => {
     if (diagram.length === 0) {
       axios
@@ -24,13 +25,15 @@ function ProcessMap() {
     }
   }, [diagram]);
   
-  if (diagram.length > 0 && container.children.length === 0) {
-    const modeler = new Modeler({
+  if (diagram.length > 0 && container && container.children.length === 0) {
+    const bpmnSetting = {
       container,
       keyboard: {
         bindTo: document
       }
-    });
+    };
+    const modeler = new Modeler(bpmnSetting);
+
     modeler
       .importXML(diagram)
       .then(({ warnings }) => {
@@ -51,12 +54,13 @@ function ProcessMap() {
   }
 
   return (
-    <div className="App">
+    <div className="processMap">
+      <BpmnMenu editible={false} />
       <div
-        id="container"
+        id="container-view"
         style={{
           border: "1px solid #000000",
-          height: "90vh",
+          height: "85vh",
           width: "98vw",
           margin: "auto"
         }}
@@ -64,4 +68,4 @@ function ProcessMap() {
     </div>
   );
 }
-export default ProcessMap;
+export default ProcessMapView;

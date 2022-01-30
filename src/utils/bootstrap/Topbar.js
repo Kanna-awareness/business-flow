@@ -1,17 +1,18 @@
 import React from 'react';
 import userLogo from '../../images/logo192.png';
+import {Link} from 'react-router-dom';
 
 class Topbar extends React.Component {
   render() {
       return (
-        <nav className="navbar navbar-expand navbar-light bg-warning topbar mb-2 static-top shadow">
+        <nav className="navbar navbar-expand navbar-light bg-light-black topbar mb-2 static-top shadow">
 
           <button id="sidebarToggleTop" className="btn btn-link d-md-none rounded-circle mr-3">
             <i className="fa fa-bars"></i>
           </button>
 
           <h4 className="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-            Process map
+            <Link to="/" className="text-white">Business Flow</Link>
           </h4>
 
           <ul className="navbar-nav ml-auto">
@@ -20,7 +21,7 @@ class Topbar extends React.Component {
 
             <li className="nav-item dropdown no-arrow">
               <a className="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span className="mr-2 d-none d-lg-inline text-gray-600 medium">Dinesh</span>
+                <span className="mr-2 d-none d-lg-inline text-white medium">Dinesh</span>
                 <img className="img-profile rounded-circle" src={userLogo}/>
               </a>
               <div className="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
