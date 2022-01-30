@@ -3,7 +3,7 @@ import '../css/bpmnMenu.css'
 import {Link} from 'react-router-dom';
 
 function BpmnMenu(props) {
-    const [name, setName] = useState('');
+    const [name, setName] = useState(props.name);
     const handleError = (event) => {
         setName(event.target.value);
     }

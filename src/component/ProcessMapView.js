@@ -49,7 +49,7 @@ function ProcessMapView() {
 
   return (
     <div className="processMap">
-      <BpmnMenu editible={false} />
+      <BpmnMenu name={"Pizza order"} editible={false} />
       <div
         id="container-view"
         style={{

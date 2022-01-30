@@ -49,7 +49,7 @@ function ProcessMapEdit() {
 
   return (
     <div className="processMap">
-      <BpmnMenu editible={true} />
+      <BpmnMenu name={"Pizza order"} editible={true} />
       <div
         id="container-edit"
         style={{

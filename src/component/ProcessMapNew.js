@@ -49,7 +49,7 @@ function ProcessMapNew() {
 
   return (
     <div className="processMap">
-      <BpmnMenu new={true} editible={true} />
+      <BpmnMenu name="" new={true} editible={true} />
       <div
         id="container-new"
         style={{
