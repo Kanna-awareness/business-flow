@@ -1,9 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import '../css/bpmnMenu.css'
 import {Link} from 'react-router-dom';
 
 function BpmnMenu(props) {
-    
+    const [name, setName] = useState('');
+    const handleError = (event) => {
+        setName(event.target.value);
+    }
 
     return (
         <div
@@ -13,7 +16,7 @@ function BpmnMenu(props) {
             <div className="leftMenu">
                 {
                     props.editible 
-                    ? <input className="processName" type="text" value={props.new ? "" : "Pizza order"} placeholder="Enter process map name here..." onChange={() => {}} />
+                    ? <input className="processName" type="text" value={name} placeholder="Enter process map name here..." onChange={handleError} />
                     : <span className="processName nonEdit">Pizza order</span>
                 }
             </div>

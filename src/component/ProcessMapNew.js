@@ -4,12 +4,12 @@ import "bpmn-js/dist/assets/diagram-js.css";
 import "bpmn-js/dist/assets/bpmn-font/css/bpmn-embedded.css";
 import '../css/bpmn.css';
 import axios from "axios";
-import defaultXML from '../utils/bpmnXML/diagram.bpmn';
+import defaultXML from '../utils/bpmnXML/initial.bpmn';
 import BpmnMenu from '../utils/BpmnMenu';
 
-function ProcessMapEdit() {
+function ProcessMapNew() {
   const [diagram, diagramSet] = useState("");
-  const container = document.getElementById("container-edit");
+  const container = document.getElementById("container-new");
   useEffect(() => {
     if (diagram.length === 0) {
       axios
@@ -40,12 +40,6 @@ function ProcessMapEdit() {
         if (warnings.length) {
           console.log("Warnings", warnings);
         }
-
-        const canvas = modeler.get("modeling");
-        canvas.setColor("CalmCustomerTask", {
-          stroke: "green",
-          fill: "yellow"
-        });
       })
       .catch((err) => {
         console.log("error", err);
@@ -57,7 +51,7 @@ function ProcessMapEdit() {
     <div className="processMap">
       <BpmnMenu new={true} editible={true} />
       <div
-        id="container-edit"
+        id="container-new"
         style={{
           border: "1px solid #000000",
           height: "85vh",
@@ -68,4 +62,4 @@ function ProcessMapEdit() {
     </div>
   );
 }
-export default ProcessMapEdit;
+export default ProcessMapNew;

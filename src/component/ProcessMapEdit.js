@@ -40,12 +40,6 @@ function ProcessMapEdit() {
         if (warnings.length) {
           console.log("Warnings", warnings);
         }
-
-        const canvas = modeler.get("modeling");
-        canvas.setColor("CalmCustomerTask", {
-          stroke: "green",
-          fill: "yellow"
-        });
       })
       .catch((err) => {
         console.log("error", err);
